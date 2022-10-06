@@ -1,5 +1,7 @@
 # team-generator-react
 
+https://idaten-hack.github.io/team-generator-react/
+
 ## プロジェクトのセットアップ
 
 ```sh
