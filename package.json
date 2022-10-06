@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint './src/**/*.{js,cjs,jsx}'",
     "lint:fix": "eslint --fix './src/**/*.{js,cjs,jsx}'",
-    "format": "prettier . --ignore-path .gitignore",
+    "format": "prettier --check . --ignore-path .gitignore",
     "format:fix": "prettier --write . --ignore-path .gitignore",
     "prepare": "husky install"
   },
