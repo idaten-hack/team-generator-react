@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,11 +16,11 @@ jobs:
           node-version: 16
           cache: 'npm'
 
-      - name: npm ci
-        run: npm ci
+      - name: Install yarn packages
+        run: yarn install --immutable --immutable-cache --check-cache
 
       - name: ESLint
-        run: npm run lint
+        run: yarn lint
 
       - name: Prettier
-        run: npm run format
+        run: yarn format
