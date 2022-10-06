@@ -1,33 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+import { CssBaseline, useMediaQuery, Typography } from '@mui/material'
+import { SampleComponent } from './components/SampleComponent'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
+
+  const theme = createTheme({
+    palette: {
+      mode: isDarkMode ? 'dark' : 'light',
+    },
+    typography: {
+      fontFamily: [
+        'Roboto',
+        'Noto Sans JP',
+        'Helvetica',
+        'Arial',
+        'sans-serif',
+      ].join(','),
+    },
+  })
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <SampleComponent />
+      <Typography>Almost before we knew it, we had left the ground.</Typography>
+      <Typography>
+        人類社会のすべての構成員の固有の尊厳と平等で譲ることのできない権利とを承認することは
+      </Typography>
+    </ThemeProvider>
   )
 }
 
