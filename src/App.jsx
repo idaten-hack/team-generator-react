@@ -1,5 +1,5 @@
-import { ThemeProvider, createTheme } from '@mui/material/styles'
-import { CssBaseline, useMediaQuery, Typography } from '@mui/material'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { CssBaseline, Typography, useMediaQuery } from '@mui/material'
 import { SampleComponent } from './components/SampleComponent'
 
 function App() {
