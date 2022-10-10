@@ -36,7 +36,7 @@ export default function HeaderBar(props) {
               variant="h6"
               noWrap
               component="a"
-              href="/"
+              href="/team-generator-react/"
               sx={{
                 fontWeight: 500,
                 color: 'inherit',
