@@ -3,7 +3,11 @@ import Stack from '@mui/material/Stack'
 
 export default function SampleComponent() {
   return (
-    <Stack direction="row" spacing={2} sx={{ m: 2, p: 2 }}>
+    <Stack
+      direction={{ xs: 'column', sm: 'row' }}
+      spacing={{ xs: 1, sm: 2 }}
+      sx={{ m: 2, p: 2 }}
+    >
       <Button variant="contained" color="primary">
         primary
       </Button>
