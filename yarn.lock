@@ -1232,6 +1232,13 @@ eslint-plugin-import@^2.26.0:
     resolve "^1.22.0"
     tsconfig-paths "^3.14.1"
 
+eslint-plugin-mui-path-imports@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mui-path-imports/-/eslint-plugin-mui-path-imports-0.0.3.tgz#ae12c2b4ef14549a62930018b09886b2f923b691"
+  integrity sha512-RYRyHuVUpJcXDuW/JPayU5O9N/75BfYYfY7hMyGdU6glNdciD3A9Y9uxEgdHocg9iX0oLDxVrdy51Or4o7yJdA==
+  dependencies:
+    requireindex "^1.2.0"
+
 eslint-plugin-react-hooks@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.0.tgz#4c3e697ad95b77e93f8646aaa1630c1ba607edd3"
@@ -2285,6 +2292,11 @@ regexpp@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-3.2.0.tgz#0425a2768d8f23bad70ca4b90461fa2f1213e1b2"
   integrity sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==
+
+requireindex@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/requireindex/-/requireindex-1.2.0.tgz#3463cdb22ee151902635aa6c9535d4de9c2ef1ef"
+  integrity sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==
 
 resolve-from@^4.0.0:
   version "4.0.0"
