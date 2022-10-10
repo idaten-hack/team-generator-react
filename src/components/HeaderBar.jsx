@@ -11,6 +11,7 @@ export default function HeaderBar() {
         maxWidth="xl"
         sx={{
           display: 'flex',
+          justifyContent: { xs: 'center', md: 'flex-start' },
           alignItems: 'center',
         }}
       >
