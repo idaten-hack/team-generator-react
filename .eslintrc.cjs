@@ -16,14 +16,22 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-key': [
       'error',
-      {checkFragmentShorthand: true, warnOnDuplicates: true},
+      { checkFragmentShorthand: true, warnOnDuplicates: true },
     ],
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
     'import/order': [
       'error',
       {
-        groups: ['builtin', 'external', 'parent', 'sibling', 'index', 'object', 'type'],
+        groups: [
+          'builtin',
+          'external',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'type',
+        ],
         pathGroups: [
           {
             pattern: '{react,react-dom/**,react-router-dom}',
