@@ -20,9 +20,6 @@ export default function SampleComponent() {
       <Button variant="contained" color="info">
         info
       </Button>
-      <Button variant="contained" color="success">
-        success
-      </Button>
     </Stack>
   )
 }
