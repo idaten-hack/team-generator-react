@@ -27,6 +27,7 @@
     "@vitejs/plugin-react": "^2.1.0",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": ">=7",
@@ -35,7 +36,7 @@
     "vite": "^3.1.0"
   },
   "lint-staged": {
-    "*.{js,jsx}": "eslint --cache --fix",
-    "*.{js,jsx,css,md}": "prettier --write"
+    "*.{js,cjs,jsx}": "eslint",
+    "*.{js,cjs,jsx,css,md}": "prettier"
   }
 }

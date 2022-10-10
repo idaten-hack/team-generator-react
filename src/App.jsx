@@ -1,6 +1,7 @@
+import { CssBaseline, useMediaQuery } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import { CssBaseline, Typography, useMediaQuery } from '@mui/material'
-import { SampleComponent } from './components/SampleComponent'
+
+import SampleComponent from './components/SampleComponent'
 
 function App() {
   const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
@@ -24,10 +25,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <SampleComponent />
-      <Typography>Almost before we knew it, we had left the ground.</Typography>
-      <Typography>
-        人類社会のすべての構成員の固有の尊厳と平等で譲ることのできない権利とを承認することは
-      </Typography>
     </ThemeProvider>
   )
 }
