@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import CssBaseline from '@mui/material/CssBaseline'
 import ThemeProvider from '@mui/material/styles/ThemeProvider'
 import createTheme from '@mui/material/styles/createTheme'
@@ -7,7 +9,9 @@ import HeaderBar from './components/HeaderBar'
 import SampleComponent from './components/SampleComponent'
 
 function App() {
-  const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
+  const [isDarkMode, setIsDarkMode] = useState(
+    useMediaQuery('(prefers-color-scheme: dark)')
+  )
 
   const theme = createTheme({
     palette: {
@@ -27,7 +31,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <HeaderBar />
+      <HeaderBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <SampleComponent />
     </ThemeProvider>
   )

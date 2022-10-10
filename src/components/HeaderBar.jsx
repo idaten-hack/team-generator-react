@@ -3,8 +3,16 @@ import AppBar from '@mui/material/AppBar'
 import Container from '@mui/material/Container'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
+import PropTypes from 'prop-types'
 
-export default function HeaderBar() {
+import ToggleAppearanceMode from './ToggleAppearanceMode'
+
+HeaderBar.propTypes = {
+  isDarkMode: PropTypes.bool,
+  setIsDarkMode: PropTypes.func,
+}
+
+export default function HeaderBar(props) {
   return (
     <AppBar position="static">
       <Container
@@ -31,6 +39,10 @@ export default function HeaderBar() {
           >
             振り分けくん
           </Typography>
+          <ToggleAppearanceMode
+            isDarkMode={props.isDarkMode}
+            setIsDarkMode={props.setIsDarkMode}
+          />
 
           <Diversity3Icon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
