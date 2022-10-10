@@ -3,6 +3,7 @@ import ThemeProvider from '@mui/material/styles/ThemeProvider'
 import createTheme from '@mui/material/styles/createTheme'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
+import HeaderBar from './components/HeaderBar'
 import SampleComponent from './components/SampleComponent'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <HeaderBar />
       <SampleComponent />
     </ThemeProvider>
   )
