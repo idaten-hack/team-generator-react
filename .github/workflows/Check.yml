@@ -1,7 +1,9 @@
 name: Check code lint and format
 
 on:
-  push:
+  pull_request:
+    branches:
+      - 'main'
 
 jobs:
   check:
