@@ -1,6 +1,6 @@
 import { Button, Stack } from '@mui/material'
 
-export function SampleComponent() {
+export default function SampleComponent() {
   return (
     <Stack direction="row" spacing={2} sx={{ m: 2, p: 2 }}>
       <Button variant="contained" color="primary">
