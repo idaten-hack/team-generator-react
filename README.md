@@ -16,11 +16,18 @@ yarn
 yarn dev
 ```
 
-## dependabot の自動マージについて
+## Dependabot の自動マージについて
+
+以下の項目に全て当てはまる Dependabot の PR は自動でマージされます。
+
+- [x] PR の作成者が `dependabot[bot]`
+- [x] PR の Approve が 1 以上
+- [x] パッチバージョンアップデート
+- [x] ビルド、リンター・フォーマットチェックに成功
 
 ```mermaid
 flowchart TD
-    A[DependabotのPRが作成される] --> B{パッチアップデートか?}
+    A[DependabotのPRが作成される] --> B{パッチバージョン \n アップデートか?}
     B --> |Yes| C[PRをApprove]
     C --> H
     B --> |No| D[End]
