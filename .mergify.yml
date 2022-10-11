@@ -6,6 +6,6 @@ pull_request_rules:
       - check-success=check
     # プルリクエストがルールに一致している場合に実行されるアクション
     actions:
-    # ベースのブランチにプルリクエストをマージ
+      # ベースのブランチにプルリクエストをマージ
       merge:
         method: merge
