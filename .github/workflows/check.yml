@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  check:
+  check-lint-and-format:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
