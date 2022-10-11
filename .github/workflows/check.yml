@@ -1,13 +1,12 @@
-name: Check code lint and format
+name: Check lint and format
 
 on:
   pull_request:
-    branches:
-      - 'main'
 
 jobs:
-  check:
+  check-lint-and-format:
     runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -18,7 +17,7 @@ jobs:
           node-version: 16
           cache: 'npm'
 
-      - name: Install yarn packages
+      - name: Install packages
         run: yarn install --immutable --immutable-cache --check-cache
 
       - name: ESLint
