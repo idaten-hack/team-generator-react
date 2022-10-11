@@ -11,6 +11,5 @@ pull_request_rules:
   - name: automatic update for PR“
     conditions:
       - author = dependabot[bot]
-      - '#commits-behind != 0'
     actions:
       update:
