@@ -18,7 +18,7 @@ jobs:
           node-version: 16
           cache: 'npm'
 
-      - name: Install yarn packages
+      - name: Install packages
         run: yarn install --immutable --immutable-cache --check-cache
 
       - name: ESLint
