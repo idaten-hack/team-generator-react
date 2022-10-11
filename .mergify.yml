@@ -2,10 +2,16 @@ pull_request_rules:
   - name: automatic merge for Dependabot pull requests
     # プルリクエストが特定のルールに一致しているか
     conditions:
-      - author~=^dependabot(|-preview)\[bot\]$
+      - author=dependabot[bot]
       - check-success=build-test
     # プルリクエストがルールに一致している場合に実行されるアクション
     actions:
       # ベースのブランチにプルリクエストをマージ
       merge:
         method: merge
+  - name: automatic update for PR“
+    conditions:
+      - author=dependabot[bot]
+      - "#commits-behind!=0"
+    actions:
+      update:
