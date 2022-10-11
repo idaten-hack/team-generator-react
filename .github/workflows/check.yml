@@ -6,6 +6,7 @@ on:
 jobs:
   check-lint-and-format:
     runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
