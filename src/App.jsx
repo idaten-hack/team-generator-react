@@ -6,7 +6,7 @@ import createTheme from '@mui/material/styles/createTheme'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
 import HeaderBar from './components/HeaderBar'
-import SampleComponent from './components/SampleComponent'
+import MainContainer from './components/MainContainer'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -32,7 +32,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <HeaderBar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      <SampleComponent />
+      <MainContainer />
     </ThemeProvider>
   )
 }
