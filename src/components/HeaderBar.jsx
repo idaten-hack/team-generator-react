@@ -6,14 +6,12 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import PropTypes from 'prop-types'
 
-import ToggleAppearanceMode from './ToggleAppearanceMode'
-
 HeaderBar.propTypes = {
   isDarkMode: PropTypes.bool,
   setIsDarkMode: PropTypes.func,
 }
 
-export default function HeaderBar(props) {
+export default function HeaderBar(/*props*/) {
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -46,12 +44,12 @@ export default function HeaderBar(props) {
               振り分けくん
             </Typography>
           </Box>
-          <Box>
+          {/*<Box>
             <ToggleAppearanceMode
               isDarkMode={props.isDarkMode}
               setIsDarkMode={props.setIsDarkMode}
             />
-          </Box>
+          </Box>*/}
         </Toolbar>
       </Container>
     </AppBar>
