@@ -14,9 +14,9 @@ function App() {
   )
 
   const theme = createTheme({
-    palette: {
+    /*palette: {
       mode: isDarkMode ? 'dark' : 'light',
-    },
+    },*/
     typography: {
       fontFamily: [
         'Roboto',
