@@ -1,29 +1,33 @@
-import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
+import Grid from '@mui/material/Unstable_Grid2'
 
 export default function InputBreakoutRoom() {
   return (
-    <Box
+    <Grid
+      container
+      spacing={2}
       sx={{
         mb: 3,
-        p: 3,
-        boxShadow: 1,
+        p: 2,
+        boxShadow: 3,
         borderRadius: 2,
+        bgcolor: 'gray.50',
       }}
     >
-      <TextField
-        label="ブレイクアウトルームの数"
-        sx={{
-          mb: 1,
-        }}
-        variant="outlined"
-        type="number"
-        fullWidth
-      />
-      <Button variant="contained" color="secondary">
-        振り分け！
-      </Button>
-    </Box>
+      <Grid xs={12}>
+        <TextField
+          label="ブレイクアウトルームの数"
+          variant="outlined"
+          type="number"
+          fullWidth
+        />
+      </Grid>
+      <Grid xs={12}>
+        <Button variant="contained" color="secondary">
+          振り分け！
+        </Button>
+      </Grid>
+    </Grid>
   )
 }
