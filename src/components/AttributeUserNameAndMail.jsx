@@ -1,9 +1,10 @@
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
+import Grid from '@mui/material/Unstable_Grid2'
 
 export default function AttributeUserNameAndMail() {
   return (
-    <>
+    <Grid xs={12} md={4}>
       <Typography
         sx={{
           mb: 1,
@@ -27,6 +28,6 @@ export default function AttributeUserNameAndMail() {
         メールアドレス
       </Typography>
       <TextField variant={'outlined'} fullWidth size={'small'} />
-    </>
+    </Grid>
   )
 }

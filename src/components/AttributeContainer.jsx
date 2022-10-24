@@ -19,9 +19,11 @@ export default function AttributeContainer() {
       <Grid xs={12}>
         <AttributeName />
       </Grid>
-      <Grid xs={12} md={4}>
-        <AttributeUserNameAndMail />
-      </Grid>
+      <AttributeUserNameAndMail />
+      <AttributeUserNameAndMail />
+      <AttributeUserNameAndMail />
+      <AttributeUserNameAndMail />
+      <AttributeUserNameAndMail />
     </Grid>
   )
 }
