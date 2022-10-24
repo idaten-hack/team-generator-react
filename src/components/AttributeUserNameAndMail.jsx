@@ -1,17 +1,41 @@
+import Delete from '@mui/icons-material/Delete'
+import Box from '@mui/material/Box'
+import IconButton from '@mui/material/IconButton'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Unstable_Grid2'
+import PropTypes, { number, string } from 'prop-types'
 
-export default function AttributeUserNameAndMail() {
+AttributeUserNameAndMail.propTypes = {
+  index: number,
+  attributes: PropTypes.arrayOf(
+    PropTypes.shape({ name: string, email: string })
+  ),
+  setAttributes: PropTypes.func,
+}
+
+export default function AttributeUserNameAndMail(props) {
+  function deleteAttribute() {
+    props.setAttributes(
+      props.attributes.filter((attribute, index) => index !== props.index)
+    )
+  }
+
   return (
     <Grid xs={12} md={4}>
-      <Typography
+      <Box
         sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
           mb: 1,
         }}
       >
-        名前
-      </Typography>
+        <Typography>名前</Typography>
+        <IconButton aria-label="delete" size="small" onClick={deleteAttribute}>
+          <Delete fontSize="small" />
+        </IconButton>
+      </Box>
       <TextField
         sx={{
           mb: 1,
