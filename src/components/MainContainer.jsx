@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import Container from '@mui/material/Container'
 
-import AttributeContainer from './AttributeContainer.jsx'
+import AttributeContainer from './AttributeContainer/AttributeContainer.jsx'
 import InputBreakoutRoom from './InputBreakoutRoom'
 
 export default function MainContainer() {
