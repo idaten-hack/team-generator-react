@@ -38,7 +38,7 @@ export default function AttributeContainer(props) {
       <Grid xs={6}>
         <AttributeName />
         <Button variant={'outlined'} onClick={addAttribute}>
-          属性の追加
+          メンバーの追加
         </Button>
       </Grid>
       <Grid container xs={12} id={'attribute-container'}>
