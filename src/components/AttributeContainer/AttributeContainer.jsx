@@ -1,24 +1,58 @@
 import Button from '@mui/material/Button'
 import Grid from '@mui/material/Unstable_Grid2'
-import PropTypes, { string } from 'prop-types'
+import PropTypes, { number, string } from 'prop-types'
 
+import AttributeMember from './AttributeMember.jsx'
 import AttributeName from './AttributeName.jsx'
-import AttributeUserNameAndMail from './AttributeUserNameAndMail.jsx'
 
 AttributeContainer.propTypes = {
-  attributes: PropTypes.arrayOf(
-    PropTypes.shape({ name: string, email: string })
+  groupId: number,
+  groupMembers: PropTypes.arrayOf(
+    PropTypes.shape({
+      memberId: number,
+      memberName: string,
+      memberEmail: string,
+    })
   ),
-  setAttributes: PropTypes.func,
+  attributeGroup: PropTypes.shape({
+    groupId: number,
+    groupMembers: PropTypes.arrayOf(
+      PropTypes.shape({
+        memberId: number,
+        memberName: string,
+        memberEmail: string,
+      })
+    ),
+  }),
+  attributeGroups: PropTypes.arrayOf(
+    PropTypes.shape({
+      groupId: number,
+      groupMembers: PropTypes.arrayOf(
+        PropTypes.shape({
+          memberId: number,
+          memberName: string,
+          memberEmail: string,
+        })
+      ),
+    })
+  ),
+  setAttributeGroups: PropTypes.func,
 }
 
 export default function AttributeContainer(props) {
   function addAttribute() {
-    props.setAttributes([
-      ...props.attributes,
+    const groupMemberIds = props.groupMembers.map(
+      (groupMember) => groupMember.memberId
+    )
+    const lastGroupMemberId = Math.max(...groupMemberIds)
+
+    props.setAttributeGroups([
       {
-        name: '',
-        email: '',
+        groupId: props.groupId,
+        groupMembers: [
+          ...props.groupMembers,
+          { memberId: lastGroupMemberId + 1, memberName: '', memberEmail: '' },
+        ],
       },
     ])
   }
@@ -42,13 +76,18 @@ export default function AttributeContainer(props) {
         </Button>
       </Grid>
       <Grid container xs={12} id={'attribute-container'}>
-        {props.attributes.map((attribute, index) => {
+        {props.groupMembers.map((groupMember) => {
           return (
-            <AttributeUserNameAndMail
-              key={index}
-              index={index}
-              attributes={props.attributes}
-              setAttributes={props.setAttributes}
+            <AttributeMember
+              key={groupMember.memberId}
+              groupId={props.groupId}
+              groupMembers={props.groupMembers}
+              memberId={groupMember.memberId}
+              memberName={groupMember.memberName}
+              memberEmail={groupMember.memberEmail}
+              attributeGroup={props.attributeGroup}
+              attributeGroups={props.attributeGroups}
+              setAttributeGroups={props.setAttributeGroups}
             />
           )
         })}

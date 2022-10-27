@@ -6,15 +6,28 @@ import AttributeContainer from './AttributeContainer/AttributeContainer.jsx'
 import InputBreakoutRoom from './InputBreakoutRoom'
 
 export default function MainContainer() {
-  const [attributes, setAttributes] = useState([{ name: '', email: '' }])
+  const [attributeGroups, setAttributeGroups] = useState([
+    {
+      groupId: 0,
+      groupMembers: [{ memberId: 0, memberName: '', memberEmail: '' }],
+    },
+  ])
 
   return (
     <Container sx={{ my: 4 }}>
       <InputBreakoutRoom />
-      <AttributeContainer
-        attributes={attributes}
-        setAttributes={setAttributes}
-      />
+      {attributeGroups.map((attributeGroup) => {
+        return (
+          <AttributeContainer
+            key={attributeGroup.groupId}
+            groupId={attributeGroup.groupId}
+            groupMembers={attributeGroup.groupMembers}
+            attributeGroup={attributeGroup}
+            attributeGroups={attributeGroups}
+            setAttributeGroups={setAttributeGroups}
+          />
+        )
+      })}
     </Container>
   )
 }
