@@ -65,6 +65,21 @@ export default function AttributeContainer(props) {
     )
   }
 
+  function addAttributeContainer() {
+    const groupIds = props.attributeGroups.map(
+      (attributeGroup) => attributeGroup.groupId
+    )
+    const lastGroupId = Math.max(...groupIds)
+
+    props.setAttributeGroups([
+      ...props.attributeGroups,
+      {
+        groupId: lastGroupId + 1,
+        groupMembers: [{ memberId: 0, memberName: '', memberEmail: '' }],
+      },
+    ])
+  }
+
   return (
     <Grid
       container
@@ -101,7 +116,11 @@ export default function AttributeContainer(props) {
         })}
       </Grid>
       <Grid xs={12} id={'attribute-container'}>
-        <Button variant={'outlined'} sx={{ mr: 1 }}>
+        <Button
+          variant={'outlined'}
+          sx={{ mr: 1 }}
+          onClick={addAttributeContainer}
+        >
           属性の追加
         </Button>
         <Button variant={'outlined'} color="error">
