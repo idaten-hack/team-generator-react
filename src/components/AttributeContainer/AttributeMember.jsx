@@ -45,14 +45,23 @@ AttributeMember.propTypes = {
 
 export default function AttributeMember(props) {
   function deleteAttribute() {
+    let deletedGroupMembers
+    if (props.groupMembers.length === 1) {
+      deletedGroupMembers = [
+        { memberId: props.memberId, memberName: '', memberEmail: '' },
+      ]
+    } else {
+      deletedGroupMembers = props.groupMembers.filter(
+        (groupMember) => groupMember.memberId !== props.memberId
+      )
+    }
+
     props.setAttributeGroups(
       props.attributeGroups.map((attributeGroup) =>
         attributeGroup.groupId === props.groupId
           ? {
               groupId: props.groupId,
-              groupMembers: props.groupMembers.filter(
-                (groupMember) => groupMember.memberId !== props.memberId
-              ),
+              groupMembers: deletedGroupMembers,
             }
           : attributeGroup
       )
@@ -70,17 +79,9 @@ export default function AttributeMember(props) {
         }}
       >
         <Typography>名前</Typography>
-        {props.groupMembers.length !== 1 ? (
-          <IconButton
-            aria-label="delete"
-            size="small"
-            onClick={deleteAttribute}
-          >
-            <Delete fontSize="small" />
-          </IconButton>
-        ) : (
-          <></>
-        )}
+        <IconButton aria-label="delete" size="small" onClick={deleteAttribute}>
+          <Delete fontSize="small" />
+        </IconButton>
       </Box>
       <TextField
         sx={{
