@@ -80,6 +80,14 @@ export default function AttributeContainer(props) {
     ])
   }
 
+  function deleteAttributeContainer() {
+    props.setAttributeGroups(
+      props.attributeGroups.filter(
+        (attributeGroup) => attributeGroup.groupId !== props.groupId
+      )
+    )
+  }
+
   return (
     <Grid
       container
@@ -123,7 +131,12 @@ export default function AttributeContainer(props) {
         >
           属性の追加
         </Button>
-        <Button variant={'outlined'} color="error">
+        <Button
+          variant={'outlined'}
+          color="error"
+          onClick={deleteAttributeContainer}
+          disabled={props.attributeGroups.length === 1}
+        >
           属性の削除
         </Button>
       </Grid>
