@@ -100,7 +100,7 @@ export default function AttributeContainer(props) {
         bgcolor: 'gray.50',
       }}
     >
-      <Grid xs={6}>
+      <Grid xs={12} md={6}>
         <AttributeName />
         <Button variant={'outlined'} onClick={addAttribute}>
           メンバーの追加
