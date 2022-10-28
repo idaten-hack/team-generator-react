@@ -45,14 +45,18 @@ AttributeMember.propTypes = {
 
 export default function AttributeMember(props) {
   function deleteAttribute() {
-    props.setAttributeGroups([
-      {
-        groupId: props.groupId,
-        groupMembers: props.groupMembers.filter(
-          (groupMember) => groupMember.memberId !== props.memberId
-        ),
-      },
-    ])
+    props.setAttributeGroups(
+      props.attributeGroups.map((attributeGroup) =>
+        attributeGroup.groupId === props.groupId
+          ? {
+              groupId: props.groupId,
+              groupMembers: props.groupMembers.filter(
+                (groupMember) => groupMember.memberId !== props.memberId
+              ),
+            }
+          : attributeGroup
+      )
+    )
   }
 
   return (

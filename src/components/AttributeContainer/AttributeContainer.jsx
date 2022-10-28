@@ -46,15 +46,23 @@ export default function AttributeContainer(props) {
     )
     const lastGroupMemberId = Math.max(...groupMemberIds)
 
-    props.setAttributeGroups([
-      {
-        groupId: props.groupId,
-        groupMembers: [
-          ...props.groupMembers,
-          { memberId: lastGroupMemberId + 1, memberName: '', memberEmail: '' },
-        ],
-      },
-    ])
+    props.setAttributeGroups(
+      props.attributeGroups.map((attributeGroup) =>
+        attributeGroup.groupId === props.groupId
+          ? {
+              groupId: props.groupId,
+              groupMembers: [
+                ...props.groupMembers,
+                {
+                  memberId: lastGroupMemberId + 1,
+                  memberName: '',
+                  memberEmail: '',
+                },
+              ],
+            }
+          : attributeGroup
+      )
+    )
   }
 
   return (

@@ -11,6 +11,10 @@ export default function MainContainer() {
       groupId: 0,
       groupMembers: [{ memberId: 0, memberName: '', memberEmail: '' }],
     },
+    {
+      groupId: 1,
+      groupMembers: [{ memberId: 0, memberName: '', memberEmail: '' }],
+    },
   ])
 
   return (
