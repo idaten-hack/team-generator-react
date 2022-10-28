@@ -100,6 +100,14 @@ export default function AttributeContainer(props) {
           )
         })}
       </Grid>
+      <Grid xs={12} id={'attribute-container'}>
+        <Button variant={'outlined'} sx={{ mr: 1 }}>
+          属性の追加
+        </Button>
+        <Button variant={'outlined'} color="error">
+          属性の削除
+        </Button>
+      </Grid>
     </Grid>
   )
 }
