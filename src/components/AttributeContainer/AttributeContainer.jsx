@@ -65,6 +65,29 @@ export default function AttributeContainer(props) {
     )
   }
 
+  function addAttributeContainer() {
+    const groupIds = props.attributeGroups.map(
+      (attributeGroup) => attributeGroup.groupId
+    )
+    const lastGroupId = Math.max(...groupIds)
+
+    props.setAttributeGroups([
+      ...props.attributeGroups,
+      {
+        groupId: lastGroupId + 1,
+        groupMembers: [{ memberId: 0, memberName: '', memberEmail: '' }],
+      },
+    ])
+  }
+
+  function deleteAttributeContainer() {
+    props.setAttributeGroups(
+      props.attributeGroups.filter(
+        (attributeGroup) => attributeGroup.groupId !== props.groupId
+      )
+    )
+  }
+
   return (
     <Grid
       container
@@ -99,6 +122,23 @@ export default function AttributeContainer(props) {
             />
           )
         })}
+      </Grid>
+      <Grid xs={12} id={'attribute-container'}>
+        <Button
+          variant={'outlined'}
+          sx={{ mr: 1 }}
+          onClick={addAttributeContainer}
+        >
+          属性の追加
+        </Button>
+        <Button
+          variant={'outlined'}
+          color="error"
+          onClick={deleteAttributeContainer}
+          disabled={props.attributeGroups.length === 1}
+        >
+          属性の削除
+        </Button>
       </Grid>
     </Grid>
   )
