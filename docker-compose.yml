@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  node:
+    build: .
+    volumes:
+      - .:/app:cached
+      - node_modules:/app/node_modules
+    environment: # 環境変数
+      - HOST=0.0.0.0 # localhost接続をする際に必要
+      - CHOKIDAR_USEPOLLING=true # ホットリロードを可能にする
+    tty: true
+    ports:
+      - "5173:5173"
+    command: yarn dev
+
+volumes:
+  node_modules:
