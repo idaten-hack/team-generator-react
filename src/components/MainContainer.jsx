@@ -9,6 +9,7 @@ export default function MainContainer() {
   const [attributeGroups, setAttributeGroups] = useState([
     {
       groupId: 0,
+      groupName: '',
       groupMembers: [{ memberId: 0, memberName: '', memberEmail: '' }],
     },
   ])
@@ -21,6 +22,7 @@ export default function MainContainer() {
           <AttributeContainer
             key={attributeGroup.groupId}
             groupId={attributeGroup.groupId}
+            groupName={attributeGroup.groupName}
             groupMembers={attributeGroup.groupMembers}
             attributeGroup={attributeGroup}
             attributeGroups={attributeGroups}

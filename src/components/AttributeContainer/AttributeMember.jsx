@@ -8,6 +8,7 @@ import PropTypes, { number, string } from 'prop-types'
 
 AttributeMember.propTypes = {
   groupId: number,
+  groupName: string,
   memberId: number,
   memberName: string,
   memberEmail: string,
@@ -20,6 +21,7 @@ AttributeMember.propTypes = {
   ),
   attributeGroup: PropTypes.shape({
     groupId: number,
+    groupName: string,
     groupMembers: PropTypes.arrayOf(
       PropTypes.shape({
         memberId: number,
@@ -31,6 +33,7 @@ AttributeMember.propTypes = {
   attributeGroups: PropTypes.arrayOf(
     PropTypes.shape({
       groupId: number,
+      groupName: string,
       groupMembers: PropTypes.arrayOf(
         PropTypes.shape({
           memberId: number,
@@ -57,6 +60,7 @@ export default function AttributeMember(props) {
         attributeGroup.groupId === props.groupId
           ? {
               groupId: props.groupId,
+              groupName: props.groupName,
               groupMembers: deletedGroupMembers,
             }
           : attributeGroup
