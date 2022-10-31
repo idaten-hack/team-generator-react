@@ -45,16 +45,12 @@ AttributeMember.propTypes = {
 
 export default function AttributeMember(props) {
   function deleteAttribute() {
-    let deletedGroupMembers
-    if (props.groupMembers.length === 1) {
-      deletedGroupMembers = [
-        { memberId: props.memberId, memberName: '', memberEmail: '' },
-      ]
-    } else {
-      deletedGroupMembers = props.groupMembers.filter(
-        (groupMember) => groupMember.memberId !== props.memberId
-      )
-    }
+    const deletedGroupMembers =
+      props.groupMembers.length === 1
+        ? [{ memberId: props.memberId, memberName: '', memberEmail: '' }]
+        : props.groupMembers.filter(
+            (groupMember) => groupMember.memberId !== props.memberId
+          )
 
     props.setAttributeGroups(
       props.attributeGroups.map((attributeGroup) =>
@@ -62,6 +58,31 @@ export default function AttributeMember(props) {
           ? {
               groupId: props.groupId,
               groupMembers: deletedGroupMembers,
+            }
+          : attributeGroup
+      )
+    )
+  }
+
+  const handleTextFieldChange = (event, target) => {
+    const changedMembers = props.groupMembers.map((groupMember) =>
+      groupMember.memberId === props.memberId
+        ? {
+            memberId: props.memberId,
+            memberName:
+              target === 'name' ? event.target.value : props.memberName,
+            memberEmail:
+              target === 'email' ? event.target.value : props.memberEmail,
+          }
+        : groupMember
+    )
+
+    props.setAttributeGroups(
+      props.attributeGroups.map((attributeGroup) =>
+        attributeGroup.groupId === props.groupId
+          ? {
+              groupId: props.groupId,
+              groupMembers: changedMembers,
             }
           : attributeGroup
       )
@@ -90,6 +111,8 @@ export default function AttributeMember(props) {
         variant={'outlined'}
         fullWidth
         size={'small'}
+        value={props.memberName}
+        onChange={(event) => handleTextFieldChange(event, 'name')}
       />
       <Typography
         sx={{
@@ -98,7 +121,13 @@ export default function AttributeMember(props) {
       >
         メールアドレス
       </Typography>
-      <TextField variant={'outlined'} fullWidth size={'small'} />
+      <TextField
+        variant={'outlined'}
+        fullWidth
+        size={'small'}
+        value={props.memberEmail}
+        onChange={(event) => handleTextFieldChange(event, 'email')}
+      />
     </Grid>
   )
 }
