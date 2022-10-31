@@ -7,6 +7,7 @@ import AttributeName from './AttributeName.jsx'
 
 AttributeContainer.propTypes = {
   groupId: number,
+  groupName: string,
   groupMembers: PropTypes.arrayOf(
     PropTypes.shape({
       memberId: number,
@@ -16,6 +17,7 @@ AttributeContainer.propTypes = {
   ),
   attributeGroup: PropTypes.shape({
     groupId: number,
+    groupName: string,
     groupMembers: PropTypes.arrayOf(
       PropTypes.shape({
         memberId: number,
@@ -27,6 +29,7 @@ AttributeContainer.propTypes = {
   attributeGroups: PropTypes.arrayOf(
     PropTypes.shape({
       groupId: number,
+      groupName: string,
       groupMembers: PropTypes.arrayOf(
         PropTypes.shape({
           memberId: number,
@@ -101,7 +104,12 @@ export default function AttributeContainer(props) {
       }}
     >
       <Grid xs={12} md={6}>
-        <AttributeName />
+        <AttributeName
+          groupId={props.groupId}
+          groupName={props.groupName}
+          attributeGroups={props.attributeGroups}
+          setAttributeGroups={props.setAttributeGroups}
+        />
         <Button variant={'outlined'} onClick={addAttribute}>
           メンバーの追加
         </Button>
@@ -112,6 +120,7 @@ export default function AttributeContainer(props) {
             <AttributeMember
               key={groupMember.memberId}
               groupId={props.groupId}
+              groupName={props.groupName}
               groupMembers={props.groupMembers}
               memberId={groupMember.memberId}
               memberName={groupMember.memberName}
