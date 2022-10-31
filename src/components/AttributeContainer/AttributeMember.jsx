@@ -47,7 +47,7 @@ AttributeMember.propTypes = {
 }
 
 export default function AttributeMember(props) {
-  function deleteAttribute() {
+  const deleteAttribute = () => {
     const deletedGroupMembers =
       props.groupMembers.length === 1
         ? [{ memberId: props.memberId, memberName: '', memberEmail: '' }]
