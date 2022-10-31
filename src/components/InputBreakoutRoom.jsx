@@ -1,8 +1,18 @@
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Grid from '@mui/material/Unstable_Grid2'
+import PropTypes, { number } from 'prop-types'
 
-export default function InputBreakoutRoom() {
+InputBreakoutRoom.propTypes = {
+  breakoutRoomNum: number,
+  setBreakoutRoomNum: PropTypes.func,
+}
+
+export default function InputBreakoutRoom(props) {
+  const handleBreakoutRoomNumChange = (event) => {
+    props.setBreakoutRoomNum(Number(event.target.value))
+  }
+
   return (
     <Grid
       container
@@ -21,6 +31,8 @@ export default function InputBreakoutRoom() {
           variant="outlined"
           type="number"
           fullWidth
+          value={props.breakoutRoomNum}
+          onChange={handleBreakoutRoomNumChange}
         />
       </Grid>
       <Grid xs={12}>

@@ -6,6 +6,7 @@ import AttributeContainer from './AttributeContainer/AttributeContainer.jsx'
 import InputBreakoutRoom from './InputBreakoutRoom'
 
 export default function MainContainer() {
+  const [breakoutRoomNum, setBreakoutRoomNum] = useState(1)
   const [attributeGroups, setAttributeGroups] = useState([
     {
       groupId: 0,
@@ -16,7 +17,10 @@ export default function MainContainer() {
 
   return (
     <Container sx={{ my: 4 }}>
-      <InputBreakoutRoom />
+      <InputBreakoutRoom
+        breakoutRoomNum={breakoutRoomNum}
+        setBreakoutRoomNum={setBreakoutRoomNum}
+      />
       {attributeGroups.map((attributeGroup) => {
         return (
           <AttributeContainer
