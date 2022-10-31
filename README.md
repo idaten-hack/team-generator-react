@@ -1,5 +1,7 @@
 # team-generator-react
 
+[![Build and Deploy](https://github.com/idaten-hack/team-generator-react/actions/workflows/deploy-github-pages.yml/badge.svg)](https://github.com/idaten-hack/team-generator-react/actions/workflows/deploy-github-pages.yml)
+
 https://idaten-hack.github.io/team-generator-react/
 
 ## プロジェクトのセットアップ
