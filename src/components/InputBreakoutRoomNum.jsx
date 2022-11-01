@@ -3,12 +3,12 @@ import TextField from '@mui/material/TextField'
 import Grid from '@mui/material/Unstable_Grid2'
 import PropTypes, { number } from 'prop-types'
 
-InputBreakoutRoom.propTypes = {
+InputBreakoutRoomNum.propTypes = {
   breakoutRoomNum: number,
   setBreakoutRoomNum: PropTypes.func,
 }
 
-export default function InputBreakoutRoom(props) {
+export default function InputBreakoutRoomNum(props) {
   const handleBreakoutRoomNumChange = (event) => {
     props.setBreakoutRoomNum(Number(event.target.value))
   }
