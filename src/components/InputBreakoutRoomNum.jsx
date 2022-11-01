@@ -22,7 +22,6 @@ export default function InputBreakoutRoomNum(props) {
         p: 2,
         boxShadow: 3,
         borderRadius: 2,
-        bgcolor: 'gray.50',
       }}
     >
       <Grid xs={12}>

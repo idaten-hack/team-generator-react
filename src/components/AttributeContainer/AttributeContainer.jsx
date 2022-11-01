@@ -100,7 +100,6 @@ export default function AttributeContainer(props) {
         p: 2,
         boxShadow: 3,
         borderRadius: 2,
-        bgcolor: 'gray.50',
       }}
     >
       <Grid xs={12} md={6}>
