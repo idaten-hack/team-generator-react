@@ -125,7 +125,6 @@ export default function AttributeContainer(props) {
               memberId={groupMember.memberId}
               memberName={groupMember.memberName}
               memberEmail={groupMember.memberEmail}
-              attributeGroup={props.attributeGroup}
               attributeGroups={props.attributeGroups}
               setAttributeGroups={props.setAttributeGroups}
             />
