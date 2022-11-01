@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Container from '@mui/material/Container'
 
 import AttributeContainer from './AttributeContainer/AttributeContainer.jsx'
-import InputBreakoutRoom from './InputBreakoutRoom'
+import InputBreakoutRoomNum from './InputBreakoutRoomNum.jsx'
 
 export default function MainContainer() {
   const [breakoutRoomNum, setBreakoutRoomNum] = useState(1)
@@ -17,7 +17,7 @@ export default function MainContainer() {
 
   return (
     <Container sx={{ my: 4 }}>
-      <InputBreakoutRoom
+      <InputBreakoutRoomNum
         breakoutRoomNum={breakoutRoomNum}
         setBreakoutRoomNum={setBreakoutRoomNum}
       />

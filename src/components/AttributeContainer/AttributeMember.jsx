@@ -19,17 +19,6 @@ AttributeMember.propTypes = {
       memberEmail: string,
     })
   ),
-  attributeGroup: PropTypes.shape({
-    groupId: number,
-    groupName: string,
-    groupMembers: PropTypes.arrayOf(
-      PropTypes.shape({
-        memberId: number,
-        memberName: string,
-        memberEmail: string,
-      })
-    ),
-  }),
   attributeGroups: PropTypes.arrayOf(
     PropTypes.shape({
       groupId: number,
