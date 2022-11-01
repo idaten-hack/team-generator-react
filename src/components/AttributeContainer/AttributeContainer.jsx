@@ -43,7 +43,7 @@ AttributeContainer.propTypes = {
 }
 
 export default function AttributeContainer(props) {
-  function addAttribute() {
+  function addAttributeMember() {
     const groupMemberIds = props.groupMembers.map(
       (groupMember) => groupMember.memberId
     )
@@ -68,7 +68,7 @@ export default function AttributeContainer(props) {
     )
   }
 
-  function addAttributeContainer() {
+  function addAttributeGroup() {
     const groupIds = props.attributeGroups.map(
       (attributeGroup) => attributeGroup.groupId
     )
@@ -110,7 +110,7 @@ export default function AttributeContainer(props) {
           attributeGroups={props.attributeGroups}
           setAttributeGroups={props.setAttributeGroups}
         />
-        <Button variant={'outlined'} onClick={addAttribute}>
+        <Button variant={'outlined'} onClick={addAttributeMember}>
           メンバーの追加
         </Button>
       </Grid>
@@ -132,11 +132,7 @@ export default function AttributeContainer(props) {
         })}
       </Grid>
       <Grid xs={12} id={'attribute-container'}>
-        <Button
-          variant={'outlined'}
-          sx={{ mr: 1 }}
-          onClick={addAttributeContainer}
-        >
+        <Button variant={'outlined'} sx={{ mr: 1 }} onClick={addAttributeGroup}>
           属性の追加
         </Button>
         <Button
