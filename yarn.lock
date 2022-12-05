@@ -216,7 +216,7 @@
     "@babel/plugin-syntax-jsx" "^7.18.6"
     "@babel/types" "^7.19.0"
 
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.19.0", "@babel/runtime@^7.20.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.20.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
   version "7.20.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.20.1.tgz#1148bb33ab252b165a06698fde7576092a78b4a9"
   integrity sha512-mrzLkl6U9YLF8qpqI7TB82PESyEGjm/0Ly91jG575eVxMMlb8fYfOXFZIJ8XfLrJZQbm7dlKry2bJmXBUEkdFg==
@@ -1275,10 +1275,10 @@ eslint-plugin-import@^2.26.0:
     resolve "^1.22.0"
     tsconfig-paths "^3.14.1"
 
-eslint-plugin-mui-path-imports@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-mui-path-imports/-/eslint-plugin-mui-path-imports-0.0.3.tgz#ae12c2b4ef14549a62930018b09886b2f923b691"
-  integrity sha512-RYRyHuVUpJcXDuW/JPayU5O9N/75BfYYfY7hMyGdU6glNdciD3A9Y9uxEgdHocg9iX0oLDxVrdy51Or4o7yJdA==
+eslint-plugin-mui-path-imports@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mui-path-imports/-/eslint-plugin-mui-path-imports-0.0.7.tgz#c8acc674a2818159fbc0b501677f25b446d8a05c"
+  integrity sha512-Mgsyqttl8B31rrVSVpRXg4fiQbVWeK3D0XLjN8s5JATRCwaBN3c7D/oTxqPPKechQMuq0kP2+VojvQ/XR9eLHw==
   dependencies:
     requireindex "^1.2.0"
 
