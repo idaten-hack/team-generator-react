@@ -1287,10 +1287,10 @@ eslint-plugin-import@^2.26.0:
     resolve "^1.22.0"
     tsconfig-paths "^3.14.1"
 
-eslint-plugin-mui-path-imports@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-mui-path-imports/-/eslint-plugin-mui-path-imports-0.0.7.tgz#c8acc674a2818159fbc0b501677f25b446d8a05c"
-  integrity sha512-Mgsyqttl8B31rrVSVpRXg4fiQbVWeK3D0XLjN8s5JATRCwaBN3c7D/oTxqPPKechQMuq0kP2+VojvQ/XR9eLHw==
+eslint-plugin-mui-path-imports@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mui-path-imports/-/eslint-plugin-mui-path-imports-0.0.9.tgz#5a71d445f4f62fb0dcb70892cf6d389e2d3dad9b"
+  integrity sha512-HWSyCtGymfcJ5VHGgvRIRZrhDx7tJh5Jnl2TU4uX6ITe6yftr2pS8FdsESDl52AzP3UBmPfob3IrP+dudFnJ9w==
   dependencies:
     requireindex "^1.2.0"
 
