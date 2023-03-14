@@ -36,7 +36,7 @@
     "husky": ">=8",
     "lint-staged": ">=13",
     "prettier": "2.8.3",
-    "vite": "^4.0.4"
+    "vite": "^4.1.1"
   },
   "lint-staged": {
     "*.{js,cjs,jsx}": "eslint",
