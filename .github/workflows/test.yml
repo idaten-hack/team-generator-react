@@ -26,8 +26,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: idaten-hack/team-generator-logic
-          token: ${{ needs.generate.outputs.token }}
-          paths: logic
+          token: ${{ steps.generate.outputs.token }}
 
       - name: Commands
         run: ls -l
