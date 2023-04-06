@@ -4,13 +4,6 @@ on:
   push:
 
 jobs:
-  generate-token:
-    name: Generate
-    uses: idaten-hack/actions/.github/workflows/generate-token.yml@main
-    secrets:
-      APP_ID: ${{ secrets.APP_ID }}
-      PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-
   checkout:
     runs-on: ubuntu-latest
     needs: generate-token
@@ -20,14 +13,21 @@ jobs:
 
       - name: Commands
         run: ls -l
-      
+
+      - name: Generate GitHub Apps token
+        id: generate
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        run: |
+          ./script.sh
+
       - name: Checkout private repos
         uses: actions/checkout@v3
         with:
           repository: idaten-hack/team-generator-logic
-          token: ${{ needs.generate-token.outputs.token }}
+          token: ${{ needs.generate.outputs.token }}
           paths: logic
 
       - name: Commands
         run: ls -l
-
