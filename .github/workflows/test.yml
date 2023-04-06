@@ -1,0 +1,29 @@
+name: Generate token by GitHub Apps
+
+on:
+  push:
+
+jobs:
+  generate-token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Generate
+        uses: idaten-hack/actions/.github/workflows/generate-token.yml@main
+        id: generate
+        secrets:
+          APP_ID: ${{ secrets.APP_ID }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+      
+      - name: Checkout private repos
+        uses: actions/checkout@v3
+        with:
+          repository: idaten-hack/team-generator-logic
+          token: ${{ steps.generate.outputs.token }}
+          paths: logic
+
+      - name: Commands
+        run: ls -l
+
