@@ -6,7 +6,7 @@ on:
 jobs:
   generate-token:
     name: Generate
-    uses: idaten-hack/actions/.github/workflows/generate-token.yml
+    uses: idaten-hack/actions/.github/workflows/generate-token.yml@d7ebb0ce0bcf4df1d1cf2da895889bbaf7538182
     secrets:
       APP_ID: ${{ secrets.APP_ID }}
       PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
