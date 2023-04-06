@@ -17,6 +17,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Commands
+        run: ls -l
       
       - name: Checkout private repos
         uses: actions/checkout@v3
